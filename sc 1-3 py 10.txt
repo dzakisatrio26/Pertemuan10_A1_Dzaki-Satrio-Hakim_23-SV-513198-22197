@@ -1,0 +1,53 @@
+#SC 1
+n = int(input("ukuran matriks = "))
+arr = [[0 for j in range(n)] for i in range(n)]
+for i in range(0, len(arr)):
+    for j in range(0, len(arr[i])):
+        if i == j:
+            arr[i][j] = 1
+for num in arr:
+    print(num)
+
+#SC 2
+baris = int(input("Masukkan jumlah baris matriks = "))
+kolom = int(input("Masukkan jumlah kolom matriks = "))
+
+print()
+matriks1 = [[int(input(f"Masukkan nilai baris-{j+1} kolom-{i+1} untuk matriks pertama = ")) for i in range(kolom)] for j in range(baris)]
+print("Matriks-1: ")
+for num in matriks1:
+    print(num)
+
+print()
+matriks2 = [[int(input(f"Masukkan nilai baris-{j+1} kolom-{i+1} untuk matriks kedua = ")) for i in range(kolom)] for j in range(baris)]
+print("Matriks-2: ")
+for num in matriks2:
+    print(num)
+ 
+add = [[0 for i in range(kolom)]for j in range(baris)]
+for i in range(len(matriks1)):
+    for j in range(len(matriks1[i])):
+        add[i][j] = matriks1[i][j] + matriks2[i][j]
+        
+print("\nHasil penjumlahan kedua matriks adalah = ")
+for num in add:
+    print(num)
+
+#SC 3
+baris = int(input("Masukkan jumlah baris matriks = "))
+kolom = int(input("Masukkan jumlah kolom matriks = "))
+
+print()
+matriks = [[int(input(f"Masukkan nilai baris-{j+1} kolom-{i+1} = ")) for i in range(kolom)]for j in range(baris)]
+trans = [[0 for i in range(baris)]for j in range(kolom)]
+for i in range(len(matriks)):
+    for j in range(len(matriks[i])):
+        trans[j][i] = matriks[i][j]
+
+print("\nMatriks awal: ")
+for num in matriks:
+    print(num)
+
+print("Hasil transpose matriks: ")
+for num in trans:
+    print(num)
